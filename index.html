@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full Stack Web Development Syllabus – React & Node.js</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: #f5f7fa;
+    color: #1e293b;
+    line-height: 1.6;
+    padding: clamp(0.75rem, 3vw, 2rem) clamp(0.75rem, 3vw, 1.5rem);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .container {
+    max-width: 900px;
+    width: 100%;
+    margin: 0 auto;
+    background: #000;
+    padding: clamp(1.25rem, 5vw, 3rem);
+    border-radius: clamp(8px, 1.5vw, 12px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* ============ MAIN TITLE ============ */
+  h1 {
+    font-size: clamp(1.25rem, 4.5vw, 2.2rem);
+    font-weight: 700;
+    background-color: #3b82f6;
+    color: #fff;
+    padding: clamp(0.75rem, 2.5vw, 1rem) clamp(1rem, 3vw, 1.5rem);
+    border-radius: 6px;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
+    line-height: 1.25;
+    text-align: center;
+  }
+
+  /* ============ SECTION TITLE ============ */
+  h2 {
+    font-size: clamp(1rem, 2.6vw, 1.35rem);
+    font-weight: 600;
+    color: rgb(255, 174, 0);
+    margin-top: clamp(1.25rem, 3vw, 2rem);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    line-height: 1.35;
+    flex-wrap: wrap;
+  }
+
+  h2 .module-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #3b82f6;
+    color: #fff;
+    font-size: clamp(0.65rem, 1.6vw, 0.8rem);
+    font-weight: 700;
+    width: clamp(22px, 3vw, 26px);
+    height: clamp(22px, 3vw, 26px);
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  /* ============ SUB HEADING ============ */
+  .subhead {
+    font-size: clamp(0.85rem, 2vw, 1rem);
+    color: yellow;
+    margin-bottom: clamp(1.5rem, 4vw, 2.2rem);
+    font-weight: 400;
+    letter-spacing: 0.3px;
+    text-align: center;
+  }
+
+  /* ============ LIST ============ */
+  ul {
+    list-style: none;
+    padding-left: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0.4rem clamp(1rem, 3vw, 2rem);
+  }
+
+  li {
+    position: relative;
+    padding-left: 1.4rem;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+    color: #fff;
+    line-height: 1.5;
+  }
+
+  li::before {
+    content: "▸";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #3b82f6;
+    font-weight: 700;
+    font-size: 0.9rem;
+  }
+
+  /* ============ FOOTER ============ */
+  .footer-note {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    padding-top: 1.2rem;
+    border-top: 1px solid #e2e8f0;
+    font-size: clamp(0.7rem, 1.6vw, 0.8rem);
+    color: #94a3b8;
+    text-align: center;
+    letter-spacing: 0.3px;
+  }
+
+  /* ============ EXTRA SMALL SCREENS ============ */
+  @media (max-width: 380px) {
+    ul {
+      grid-template-columns: 1fr;
+    }
+    li {
+      font-size: 0.85rem;
+    }
+  }
+
+  /* ============ TABLET & UP ============ */
+  @media (min-width: 640px) {
+    ul {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    body {
+      background: #fff;
+      padding: 0.5in;
+      color: #000;
+    }
+    .container {
+      box-shadow: none;
+      padding: 0;
+      max-width: 100%;
+      background: #fff;
+    }
+    h1 {
+      font-size: 1.6rem;
+      background: #3b82f6 !important;
+      color: #fff !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    h2 {
+      font-size: 1.15rem;
+      color: #b45309 !important;
+    }
+    h2 .module-num {
+      background: #3b82f6 !important;
+      color: #fff !important;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .subhead { color: #b45309 !important; }
+    li { color: #000 !important; font-size: 0.85rem; }
+    li::before { color: #3b82f6 !important; }
+    .footer-note { display: none; }
+    ul { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Ai Codex Learning Point Institute</h1>
+  <h2>Full Stack Web Development Course</h2>
+  <div class="subhead">React &amp; Node.js — Complete Syllabus (Topic‑wise)</div>
+
+  <!-- 1 -->
+  <h2><span class="module-num">1</span>Web Fundamentals</h2>
+  <ul>
+    <li>How the Web Works</li>
+    <li>HTTP / HTTPS</li>
+    <li>DNS</li>
+    <li>Browsers &amp; Servers</li>
+    <li>Client‑Server Architecture</li>
+  </ul>
+
+  <!-- 2 -->
+  <h2><span class="module-num">2</span>HTML5</h2>
+  <ul>
+    <li>Document Structure</li>
+    <li>Semantic Elements</li>
+    <li>Forms &amp; Inputs</li>
+    <li>Tables</li>
+    <li>Media (Audio, Video)</li>
+    <li>Meta Tags</li>
+    <li>Accessibility</li>
+  </ul>
+
+  <!-- 3 -->
+  <h2><span class="module-num">3</span>CSS3</h2>
+  <ul>
+    <li>Selectors</li>
+    <li>Box Model</li>
+    <li>Flexbox</li>
+    <li>Grid</li>
+    <li>Positioning</li>
+    <li>Responsive Design</li>
+    <li>Media Queries</li>
+    <li>Transitions &amp; Animations</li>
+    <li>CSS Variables</li>
+    <li>Preprocessors (Sass)</li>
+  </ul>
+
+  <!-- 4 -->
+  <h2><span class="module-num">4</span>JavaScript (ES6+)</h2>
+  <ul>
+    <li>Variables (let, const, var)</li>
+    <li>Data Types</li>
+    <li>Operators</li>
+    <li>Control Flow</li>
+    <li>Functions (Arrow, Higher‑Order)</li>
+    <li>Arrays &amp; Objects</li>
+    <li>Destructuring</li>
+    <li>Spread / Rest</li>
+    <li>Template Literals</li>
+    <li>Modules (import / export)</li>
+    <li>Promises</li>
+    <li>Async / Await</li>
+    <li>Fetch API</li>
+    <li>Error Handling</li>
+    <li>DOM Manipulation</li>
+    <li>Event Handling</li>
+    <li>Local Storage</li>
+  </ul>
+
+  <!-- 5 -->
+  <h2><span class="module-num">5</span>Version Control (Git &amp; GitHub)</h2>
+  <ul>
+    <li>Git Basics</li>
+    <li>Branching</li>
+    <li>Merging</li>
+    <li>Pull Requests</li>
+    <li>GitHub Workflow</li>
+  </ul>
+
+  <!-- 6 -->
+  <h2><span class="module-num">6</span>Node.js</h2>
+  <ul>
+    <li>Introduction to Node.js</li>
+    <li>Event Loop</li>
+    <li>Modules (CommonJS, ES Modules)</li>
+    <li>File System</li>
+    <li>Streams</li>
+    <li>Buffers</li>
+    <li>Global Objects</li>
+    <li>NPM</li>
+    <li>Package.json</li>
+    <li>Environment Variables</li>
+  </ul>
+
+  <!-- 7 -->
+  <h2><span class="module-num">7</span>Express.js</h2>
+  <ul>
+    <li>Routing</li>
+    <li>Middleware</li>
+    <li>Request / Response</li>
+    <li>Template Engines (EJS, Pug)</li>
+    <li>Static Files</li>
+    <li>Error Handling</li>
+    <li>RESTful APIs</li>
+    <li>CORS</li>
+    <li>Helmet</li>
+    <li>Rate Limiting</li>
+  </ul>
+
+  <!-- 8 -->
+  <h2><span class="module-num">8</span>Databases</h2>
+  <ul>
+    <li>SQL vs NoSQL</li>
+    <li>MongoDB</li>
+    <li>Mongoose ODM</li>
+    <li>CRUD Operations</li>
+    <li>Schema Design</li>
+    <li>Relationships</li>
+    <li>Indexing</li>
+  </ul>
+
+  <!-- 10 -->
+  <h2><span class="module-num">10</span>React.js</h2>
+  <ul>
+    <li>Introduction to React</li>
+    <li>JSX</li>
+    <li>Components (Functional, Class)</li>
+    <li>Props &amp; State</li>
+    <li>Lifecycle Methods</li>
+    <li>Hooks (useState, useEffect, useContext, useReducer, useRef, useMemo, useCallback)</li>
+    <li>Custom Hooks</li>
+    <li>Context API</li>
+    <li>React Router</li>
+    <li>Forms (Controlled / Uncontrolled)</li>
+    <li>Higher‑Order Components</li>
+    <li>Render Props</li>
+    <li>Error Boundaries</li>
+    <li>Portals</li>
+    <li>Refs</li>
+    <li>Fragments</li>
+    <li>Styling (CSS Modules, Styled Components, Tailwind)</li>
+    <li>State Management (Redux, Redux Toolkit, Zustand, Context)</li>
+    <li>React Query / TanStack Query</li>
+    <li>Testing (Jest, React Testing Library)</li>
+  </ul>
+
+  <!-- 11 -->
+  <h2><span class="module-num">11</span>Advanced React</h2>
+  <ul>
+    <li>Code Splitting</li>
+    <li>Server‑Side Rendering (Next.js)</li>
+    <li>Static Site Generation</li>
+    <li>Progressive Web Apps (PWA)</li>
+    <li>Performance Optimization</li>
+    <li>React DevTools</li>
+  </ul>
+
+  <!-- 12 -->
+  <h2><span class="module-num">12</span>API Integration</h2>
+  <ul>
+    <li>REST APIs</li>
+    <li>GraphQL</li>
+    <li>Axios</li>
+    <li>Fetch</li>
+    <li>WebSockets</li>
+    <li>Socket.io</li>
+  </ul>
+
+  <!-- 13 -->
+  <h2><span class="module-num">13</span>DevOps &amp; Deployment</h2>
+  <ul>
+    <li>AWS / Vercel / Netlify / Heroku</li>
+    <li>MongoDB Atlas</li>
+  </ul>
+
+  <!-- 15 -->
+  <h2><span class="module-num">15</span>Testing</h2>
+  <ul>
+    <li>Unit Testing</li>
+    <li>Integration Testing</li>
+    <li>End‑to‑End Testing</li>
+    <li>Jest</li>
+    <li>Mocha</li>
+    <li>Chai</li>
+    <li>Supertest</li>
+    <li>Cypress</li>
+    <li>Playwright</li>
+  </ul>
+
+  <!-- 16 -->
+  <h2><span class="module-num">16</span>Project Work</h2>
+  <ul>
+    <li>Portfolio Website</li>
+    <li>E‑commerce App</li>
+    <li>Social Media App</li>
+    <li>Blog</li>
+    <li>Chat App</li>
+    <li>Task Manager</li>
+    <li>Real‑time Dashboard</li>
+  </ul>
+
+  <div class="footer-note">Full Stack Web Development — React &amp; Node.js · Topic‑wise Syllabus</div>
+</div>
+</body>
+</html>
